@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Single Post</title>
+
+  <meta charset="utf-8">
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="">
+
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet'>
+
+   <!-- Css -->
+  <link rel="stylesheet"  href="{{ url_for('static',filename='css/bootstrap.min.css',_external=True) }}" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/font-icons.css',_external=True) }}" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css',_external=True) }}" />
+
+  <!-- Lazyload -->
+  <script src="{{ url_for('static',filename='js/lazysizes.min.js') }}"></script>
+
+</head>
+
+<body class="bg-light single-post">
+
+  <!-- Preloader -->
+  <div class="loader-mask">
+    <div class="loader">
+      <div></div>
+    </div>
+  </div>
+
+  <!-- Bg Overlay -->
+  <div class="content-overlay"></div>
+
+  <!-- Sidenav -->
+  <header class="sidenav" id="sidenav">
+
+    <!-- close -->
+    <div class="sidenav__close">
+      <button class="sidenav__close-button" id="sidenav__close-button" aria-label="close sidenav">
+        <i class="ui-close sidenav__close-icon"></i>
+      </button>
+    </div>
+
+    <!-- Nav -->
+    <nav class="sidenav__menu-container">
+      <ul class="sidenav__menu" role="menubar">
+        <!-- Categories -->
+        <li>
+          <a href="#" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--orange">World</a>
+        </li>
+        <li>
+          <a href="#" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--blue">Business</a>
+        </li>
+        <li>
+          <a href="#" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--red">Politics</a>
+        </li>
+        <li>
+          <a href="#" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--salad">Lifestyle</a>
+        </li>
+        <li>
+          <a href="#" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--purple">Tech</a>
+        </li>
+        <li>
+          <a href="#" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--yellow">Fashion</a>
+        </li>
+        <li>
+          <a href="#" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--light-blue">Sport</a>
+        </li>
+        <li>
+          <a href="#" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--violet">Science</a>
+        </li>
+
+        <li>
+          <a href="#" class="sidenav__menu-link">Posts</a>
+          <button class="sidenav__menu-toggle" aria-haspopup="true" aria-label="Open dropdown"><i class="ui-arrow-down"></i></button>
+          <ul class="sidenav__menu-dropdown">
+            <li><a href="#" class="sidenav__menu-link">Gallery Post</a></li>
+            <li><a href="single-post.html" class="sidenav__menu-link">Video Post</a></li>
+            <li><a href="single-post.html" class="sidenav__menu-link">Audio Post</a></li>
+            <li><a href="#" class="sidenav__menu-link">Quote Post</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#" class="sidenav__menu-link">Pages</a>
+          <button class="sidenav__menu-toggle" aria-haspopup="true" aria-label="Open dropdown"><i class="ui-arrow-down"></i></button>
+          <ul class="sidenav__menu-dropdown">
+            <li><a href="#" class="sidenav__menu-link">About</a></li>
+            <li><a href="#" class="sidenav__menu-link">Contact</a></li>
+            <li><a href="#" class="sidenav__menu-link">Search Results</a></li>
+            <li><a href="#" class="sidenav__menu-link">Categories</a></li>
+            <li><a href="#" class="sidenav__menu-link">Shortcodes</a></li>
+            <li><a href="#" class="sidenav__menu-link">Lazyload</a></li>
+            <li><a href="#" class="sidenav__menu-link">404</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#" class="sidenav__menu-link">About</a>
+        </li>
+
+        <li>
+          <a href="#" class="sidenav__menu-link">Contact</a>
+        </li>
+
+        <li>
+          <a href="#" class="sidenav__menu-link">Advertise</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="socials sidenav__socials">
+      <a class="social social-facebook" href="#" target="_blank" aria-label="facebook">
+        <i class="ui-facebook"></i>
+      </a>
+      <a class="social social-twitter" href="#" target="_blank" aria-label="twitter">
+        <i class="ui-twitter"></i>
+      </a>
+      <a class="social social-google-plus" href="#" target="_blank" aria-label="google">
+        <i class="ui-google"></i>
+      </a>
+      <a class="social social-youtube" href="#" target="_blank" aria-label="youtube">
+        <i class="ui-youtube"></i>
+      </a>
+      <a class="social social-instagram" href="#" target="_blank" aria-label="instagram">
+        <i class="ui-instagram"></i>
+      </a>
+    </div>
+  </header> <!-- end sidenav -->
+
+
+  <main class="main oh" id="main">
+
+    <!-- Navigation -->
+    <header class="nav">
+
+      <div class="nav__holder nav--sticky">
+        <div class="container relative">
+          <div class="flex-parent">
+
+            <!-- Side Menu Button -->
+            <button class="nav-icon-toggle" id="nav-icon-toggle" aria-label="Open side menu">
+              <span class="nav-icon-toggle__box">
+                <span class="nav-icon-toggle__inner"></span>
+              </span>
+            </button> <!-- end Side menu button -->
+
+            <!-- Mobile logo -->
+            <a href="index.html" class="logo logo--mobile d-lg-none">
+              <img class="logo__img" src="img/logo_mobile.png" srcset="img/logo_mobile.png 1x, img/logo_mobile@2x.png 2x" alt="logo">
+            </a>
+
+            <!-- Nav-wrap -->
+            <nav class="flex-child nav__wrap d-none d-lg-block">
+              <ul class="nav__menu">
+
+                <li class="active">
+                  <a href="index.html"><font size="5">首页</font></a>
+                </li>
+
+                <li class="nav__dropdown">
+                  <a href="#1"><font color="red" size="5">红色</font></a>
+
+                </li>
+
+                <li>
+                  <a href="#2"><font size="5">国际</font></a>
+                </li>
+
+                <li class="nav__dropdown">
+                  <a href="#3"><font size="5">科技</font></a>
+
+                </li>
+
+                <li class="nav__dropdown">
+                  <a href="#4"><font size="5">军事</font></a>
+
+                </li>
+
+                <li>
+                  <a href="#5"><font size="5">法治</font></a>
+                </li>
+
+
+              </ul> <!-- end menu -->
+            </nav> <!-- end nav-wrap -->
+
+            <!-- Nav Right -->
+            <div class="nav__right nav--align-right d-lg-flex">
+
+              <!-- Socials -->
+              <div class="nav__right-item socials nav__socials d-none d-lg-flex">
+                <a class="social social-facebook social--nobase" href="#" target="_blank" aria-label="facebook">
+                  <i class="ui-facebook"></i>
+                </a>
+                <a class="social social-twitter social--nobase" href="#" target="_blank" aria-label="twitter">
+                  <i class="ui-twitter"></i>
+                </a>
+                <a class="social social-google social--nobase" href="#" target="_blank" aria-label="google">
+                  <i class="ui-google"></i>
+                </a>
+                <a class="social social-youtube social--nobase" href="#" target="_blank" aria-label="youtube">
+                  <i class="ui-youtube"></i>
+                </a>
+                <a class="social social-instagram social--nobase" href="#" target="_blank" aria-label="instagram">
+                  <i class="ui-instagram"></i>
+                </a>
+              </div>
+
+              <!-- Search -->
+              <div class="nav__right-item nav__search">
+                <a href="#" class="nav__search-trigger" id="nav__search-trigger">
+                  <i class="ui-search nav__search-trigger-icon"></i>
+                </a>
+                <div class="nav__search-box" id="nav__search-box">
+                  <form class="nav__search-form">
+                    <input type="text" placeholder="Search an article" class="nav__search-input">
+                    <button type="submit" class="search-button btn btn-lg btn-color btn-button">
+                      <i class="ui-search nav__search-icon"></i>
+                    </button>
+                  </form>
+                </div>
+
+              </div>
+
+            </div> <!-- end nav right -->
+
+          </div> <!-- end flex-parent -->
+        </div> <!-- end container -->
+
+      </div>
+    </header> <!-- end navigation -->
+
+    <!-- Header -->
+
+
+    <div class="main-container container" id="main-container">
+
+      <!-- Content -->
+      <div class="row">
+
+        <!-- post content -->
+        <div class="col-lg-8 blog__content mb-30">
+
+          <!-- Breadcrumbs -->
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs__item">
+              <a href="index.html" class="breadcrumbs__url"><i class="ui-home"></i></a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a href="index.html" class="breadcrumbs__url">News</a>
+            </li>
+            <li class="breadcrumbs__item breadcrumbs__item--current">
+              World
+            </li>
+          </ul>
+
+          <!-- standard post -->
+          <article class="entry">
+
+            <div class="single-post__entry-header entry__header">
+              <a href="#" class="entry__meta-category">{{ list2[0]['label'] }}</a>
+              <h1 class="single-post__entry-title">
+                  {{list2[0]['title']}}
+              </h1>
+
+              <ul class="entry__meta">
+                <li class="entry__meta-author">
+                  <i class="ui-author"></i>
+                  <a href="#">DeoThemes</a>
+                </li>
+                <li class="entry__meta-date">
+                  <i class="ui-date"></i>
+                  21 October, 2017
+                </li>
+                <li class="entry__meta-comments">
+                  <i class="ui-comments"></i>
+                  <a href="#">115</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="entry__img-holder">
+              <img src="{{ list2[0]['img_src']}}" alt="" class="entry__img">
+            </div>
+
+            <!-- Share -->
+
+
+            <div class="entry__article">
+                <p>{{ list2[0]['message'] }}</p>
+
+
+
+
+
+
+              <!-- tags -->
+              <div class="widget widget_tag_cloud">
+            <h4 class="widget-title">标签</h4>
+            <div class="tagcloud">
+              <a href="#">{{list2[0]['lable']}}</a>
+              <a href="#">国际风云</a>
+              <a href="#">国内实时</a>
+              <a href="#">科技强国</a>
+              <a href="#">军政</a>
+              <a href="#">依法治国</a>
+              <a href="#">红军精神</a>
+              <a href="#">抗日</a>
+            </div>
+          </div>
+
+            </div> <!-- end entry article -->
+
+
+
+
+
+
+            <!-- Related Posts -->
+            <div class="related-posts">
+              <div class="title-wrap mt-40">
+                <h5 class="uppercase">相关推荐</h5>
+              </div>
+              <div class="row row-20">
+                <div class="col-md-4">
+                  <article class="entry">
+                    <div class="entry__img-holder">
+                      <a href="single-post.html">
+                        <div class="thumb-container thumb-75">
+                          <img data-src="{{ list3[0]['img_src'] }}" src="img/empty.png" class="entry__img lazyload" alt="">
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="entry__body">
+                      <div class="entry__header">
+                        <h2 class="entry__title entry__title--sm">
+                          <a href="single-post.html">{{ list3[0]['title'] }}</a>
+                        </h2><br>
+                          <h5>{{ list3[0]['lable'] }}</h5><br>
+                          <p>{{ list3[0]['brief'] }}</p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-4">
+                  <article class="entry">
+                    <div class="entry__img-holder">
+                      <a href="single-post.html">
+                        <div class="thumb-container thumb-75">
+                          <img data-src="{{ list3[1]['img_src'] }}" src="img/empty.png" class="entry__img lazyload" alt="">
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="entry__body">
+                      <div class="entry__header">
+                        <h2 class="entry__title entry__title--sm">
+                          <a href="single-post.html">{{ list3[1]['title'] }}</a>
+                        </h2><br>
+                          <h5>{{ list3[1]['lable'] }}</h5><br>
+                          <p>{{ list3[1]['brief'] }}</p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-4">
+                  <article class="entry">
+                    <div class="entry__img-holder">
+                      <a href="single-post.html">
+                        <div class="thumb-container thumb-75">
+                          <img data-src="{{ list3[2]['img_src'] }}" src="img/empty.png" class="entry__img lazyload" alt="">
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="entry__body">
+                      <div class="entry__header">
+                        <h2 class="entry__title entry__title--sm">
+                          <a href="single-post.html">{{ list3[2]['title'] }}</a>
+                        </h2><br>
+                          <h5>{{ list3[2]['lable'] }}</h5><br>
+                          <p>{{ list3[2]['brief'] }}</p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-md-4">
+                  <article class="entry">
+                    <div class="entry__img-holder">
+                      <a href="single-post.html">
+                        <div class="thumb-container thumb-75">
+                          <img data-src="{{ list3[3]['img_src'] }}" src="img/empty.png" class="entry__img lazyload" alt="">
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="entry__body">
+                      <div class="entry__header">
+                        <h2 class="entry__title entry__title--sm">
+                          <a href="single-post.html">{{ list3[3]['title'] }}</a>
+                        </h2><br>
+                          <h5>{{ list3[3]['lable'] }}</h5><br>
+                          <p>{{ list3[3]['brief'] }}</p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-4">
+                  <article class="entry">
+                    <div class="entry__img-holder">
+                      <a href="single-post.html">
+                        <div class="thumb-container thumb-75">
+                          <img data-src="{{ list3[4]['img_src'] }}" src="img/empty.png" class="entry__img lazyload" alt="">
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="entry__body">
+                      <div class="entry__header">
+                        <h2 class="entry__title entry__title--sm">
+                          <a href="single-post.html">{{ list3[4]['title'] }}</a>
+                        </h2><br>
+                          <h5>{{ list3[4]['lable'] }}</h5><br>
+                          <p>{{ list3[4]['brief'] }}</p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-4">
+                  <article class="entry">
+                    <div class="entry__img-holder">
+                      <a href="single-post.html">
+                        <div class="thumb-container thumb-75">
+                          <img data-src="{{ list3[5]['img_src'] }}" src="img/empty.png" class="entry__img lazyload" alt="">
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="entry__body">
+                      <div class="entry__header">
+                        <h2 class="entry__title entry__title--sm">
+                          <a href="single-post.html">{{ list3[5]['title'] }}</a>
+                        </h2><br>
+                          <h5>{{ list3[5]['lable'] }}</h5><br>
+                          <p>{{ list3[5]['brief'] }}</p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+            </div> <!-- end related posts -->
+
+          </article> <!-- end standard post -->
+
+
+
+
+
+
+
+        </div> <!-- end col -->
+
+        <!-- Sidebar -->
+        <aside class="col-lg-4 sidebar sidebar--right">
+
+          <!-- Widget Social Subscribers -->
+          <div class="widget widget-social-subscribers">
+            <ul class="widget-social-subscribers__list">
+              <li class="widget-social-subscribers__item">
+                <a href="#" class="widget-social-subscribers__url widget-social-subscribers--facebook">
+                  <i class="ui-facebook widget-social-subscribers__icon"></i>
+                  <span class="widget-social-subscribers__number">15369</span>
+                  <span class="widget-social-subscribers__text">Fans</span>
+                </a>
+              </li>
+              <li class="widget-social-subscribers__item">
+                <a href="#" class="widget-social-subscribers__url widget-social-subscribers--twitter">
+                  <i class="ui-twitter widget-social-subscribers__icon"></i>
+                  <span class="widget-social-subscribers__number">15369</span>
+                  <span class="widget-social-subscribers__text">Followers</span>
+                </a>
+              </li>
+              <li class="widget-social-subscribers__item">
+                <a href="#" class="widget-social-subscribers__url widget-social-subscribers--google">
+                  <i class="ui-google widget-social-subscribers__icon"></i>
+                  <span class="widget-social-subscribers__number">15369</span>
+                  <span class="widget-social-subscribers__text">Followers</span>
+                </a>
+              </li>
+              <li class="widget-social-subscribers__item">
+                <a href="#" class="widget-social-subscribers__url widget-social-subscribers--rss">
+                  <i class="ui-rss widget-social-subscribers__icon"></i>
+                  <span class="widget-social-subscribers__number">15369</span>
+                  <span class="widget-social-subscribers__text">Subscribers</span>
+                </a>
+              </li>
+              <li class="widget-social-subscribers__item">
+                <a href="#" class="widget-social-subscribers__url widget-social-subscribers--youtube">
+                  <i class="ui-youtube widget-social-subscribers__icon"></i>
+                  <span class="widget-social-subscribers__number">15369</span>
+                  <span class="widget-social-subscribers__text">Subscribers</span>
+                </a>
+              </li>
+              <li class="widget-social-subscribers__item">
+                <a href="#" class="widget-social-subscribers__url widget-social-subscribers--instagram">
+                  <i class="ui-instagram widget-social-subscribers__icon"></i>
+                  <span class="widget-social-subscribers__number">15369</span>
+                  <span class="widget-social-subscribers__text">Followers</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Widget Popular/Latest Posts -->
+          <div class="widget widget-tabpost">
+            <div class="tabs widget-tabpost__tabs">
+              <ul class="tabs__list widget-tabpost__tabs-list">
+                <li class="tabs__item widget-tabpost__tabs-item tabs__item--active">
+                  <a href="#tab-trending" class="tabs__url tabs__trigger widget-tabpost__tabs-url">红色之乡</a>
+                </li>
+                <li class="tabs__item widget-tabpost__tabs-item">
+                  <a href="#tab-latest" class="tabs__url tabs__trigger widget-tabpost__tabs-url">抗日精神</a>
+                </li>
+                <li class="tabs__item widget-tabpost__tabs-item">
+                  <a href="#tab-comments" class="tabs__url tabs__trigger widget-tabpost__tabs-url">长征精神</a>
+                </li>
+              </ul> <!-- end tabs -->
+
+              <!-- tab content -->
+              <div class="tabs__content tabs__content-trigger widget-tabpost__tabs-content">
+
+                <div class="tabs__content-pane tabs__content-pane--active" id="tab-trending">
+                  <ul class="post-list-small">
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/16.jpg" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">一格一影一世界：红色之乡梁弄</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              2 julyr, 2021
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/blog/popular_post_2.jpg" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">你了解多少？大化丨“红色之乡”之古河革命纪念馆</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              21 October, 2021
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/17.jpg" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">红色旅游：追寻红色记忆 传承民族精神</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              21 October, 2021
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/18.jpg" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">返乡创业青年朱梦嘉走在湖南汝城县沙洲瑶族村的红军桥上</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              21 October, 2021
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="tabs__content-pane" id="tab-latest">
+                  <ul class="post-list-small">
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/19.jpg" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">七七事变 全面抗战</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              21 October, 2021
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/20.png" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">肖像与手模：益阳抗战老兵夏国南</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              21 October, 2021
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/21.jpg" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">日媒首次曝光：东条英机等7名甲级战犯骨灰被美军扬进太平洋</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              21 October, 2021
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/22.jpg" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">湖南省政协原副主席刘晓到抗日战争图书馆考察指导工作</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              21 October, 2021
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="tabs__content-pane" id="tab-comments">
+                  <ul class="post-list-small">
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/23.jpg" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">长征精神，习近平最重视什么？</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              21 October, 2021
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/24.jpg" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">人民，是理想之根信念之源</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              21 October, 2021
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/blog/popular_post_2.jpg" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">把全国人民和中华民族的根本利益看得高于一切，坚定革命的理想和信念，坚信正义事业必然胜利的精神</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              21 October, 2017
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="post-list-small__item">
+                      <article class="post-list-small__entry clearfix">
+                        <div class="post-list-small__img-holder">
+                          <div class="thumb-container thumb-75">
+                            <a href="single-post.html">
+                              <img data-src="./static/img/blog/popular_post_4.jpg" src="img/empty.png" alt="" class=" lazyload">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="post-list-small__body">
+                          <h3 class="post-list-small__entry-title">
+                            <a href="single-post.html">二万五千里长征</a>
+                          </h3>
+                          <ul class="entry__meta">
+                            <li class="entry__meta-date">
+                              <i class="ui-date"></i>
+                              21 October, 2021
+                            </li>
+                          </ul>
+                        </div>
+                      </article>
+                    </li>
+                  </ul>
+                </div>
+
+              </div> <!-- end tab content -->
+            </div> <!-- end tabs -->
+          </div> <!-- end widget popular/latest posts -->
+
+          <!-- Widget Ad 300 -->
+          <div class="widget widget_media_image">
+            <a href="#">
+              <img src="{{ url_for('static',filename='img/25.jpg' )}}" alt="">
+            </a>
+          </div> <!-- end widget ad 300 -->
+
+          <!-- Widget Socials -->
+          <div class="widget widget-socials">
+            <h4 class="widget-title">Follow us</h4>
+            <div class="socials">
+              <a class="social social-facebook social--large" href="#" title="facebook" target="_blank" aria-label="facebook">
+                <i class="ui-facebook"></i>
+              </a><!--
+              --><a class="social social-twitter social--large" href="#" title="twitter" target="_blank" aria-label="twitter">
+                <i class="ui-twitter"></i>
+              </a><!--
+              --><a class="social social-google-plus social--large" href="#" title="google" target="_blank" aria-label="google">
+                <i class="ui-google"></i>
+              </a><!--
+              --><a class="social social-instagram social--large" href="#" title="instagram" target="_blank" aria-label="instagram">
+                <i class="ui-instagram"></i>
+              </a><!--
+              --><a class="social social-youtube social--large" href="#" title="youtube" target="_blank" aria-label="youtube">
+                <i class="ui-youtube"></i>
+              </a><!--
+              --><a class="social social-rss social--large" href="#" title="rss" target="_blank" aria-label="rss">
+                <i class="ui-rss"></i>
+              </a>
+            </div>
+          </div> <!-- end widget socials -->
+
+          <!-- Widget Twitter -->
+          <div class="widget">
+            <h4 class="widget-title">我们的精神：“实事求是”</h4>
+            <div class="tweets-container">
+              <div id="tweets"></div>
+            </div>
+          </div>
+
+          <!-- Widget Ad 125 -->
+          <div class="widget widget-gallery-sm">
+            <ul class="widget-gallery-sm__list">
+              <li class="widget-gallery-sm__item">
+                <a href="#"><img src="{{ url_for('static',filename='img/26.jpg' )}}" alt=""></a>
+              </li>
+              <li class="widget-gallery-sm__item">
+                <a href="#"><img src="{{ url_for('static',filename='img/27.jpg' )}}" alt=""></a>
+              </li>
+              <li class="widget-gallery-sm__item">
+                <a href="#"><img src="{{ url_for('static',filename='img/28.jpg' )}}" alt=""></a>
+              </li>
+              <li class="widget-gallery-sm__item">
+                <a href="#"><img src="{{ url_for('static',filename='img/29.jpg' )}}" alt=""></a>
+              </li>
+            </ul>
+          </div> <!-- end widget ad 300 -->
+
+          <!-- Widget Carousel -->
+          <div class="widget">
+            <h4 class="widget-title">特色报道</h4>
+            <div id="owl-single" class="owl-carousel owl-theme">
+
+              <article class="entry">
+                <div class="entry__img-holder mb-0">
+                  <a href="single-post.html">
+                    <div class="thumb-bg-holder">
+                      <img data-src="./static/img/30.jpg" src="{{ url_for('static',filename='img/30.jpg' )}}" class="entry__img owl-lazy" alt="">
+                      <div class="bottom-gradient"></div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="thumb-text-holder">
+                  <h2 class="thumb-entry-title thumb-entry-title--sm">
+                    <a href="single-post.html">习近平总书记来到陕西延安、铜川、西安等地，深入乡村、学校、社区、科研院所、革命根据地纪念场馆调研考察</a>
+                  </h2>
+                </div>
+              </article>
+
+              <article class="entry">
+                <div class="entry__img-holder mb-0">
+                  <a href="single-post.html">
+                    <div class="thumb-bg-holder">
+                      <img data-src="./static/img/31.jpg" src="img/31.jpg" class="entry__img owl-lazy" alt="">
+                      <div class="bottom-gradient"></div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="thumb-text-holder">
+                  <h2 class="thumb-entry-title thumb-entry-title--sm">
+                    <a href="single-post.html">延安是革命圣地。延安时期是我们党领导的中国革命事业从低潮走向高潮、实现历史性转折的时期</a>
+                  </h2>
+                </div>
+              </article>
+
+
+            </div>
+          </div>
+
+          <!-- Latest Reviews -->
+          <div class="widget widget-reviews">
+            <h4 class="widget-title">最新评论</h4>
+            <ul class="post-list-small">
+              <li class="post-list-small__item">
+                <article class="post-list-small__entry clearfix">
+                  <div class="post-list-small__img-holder">
+                    <div class="thumb-container thumb-75">
+                      <a href="single-post.html">
+                        <img data-src="./static/img/blog/review_post_1.jpg" src="img/blog/review_post_1.jpg" alt="" class=" lazyload">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="post-list-small__body">
+                    <h3 class="post-list-small__entry-title">
+                      <a href="single-post.html">我对iphonex的第一印象</a>
+                    </h3>
+                    <ul class="entry__meta">
+                      <li class="entry__meta-rating">
+                        <i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star-outline"></i>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </li>
+              <li class="post-list-small__item">
+                <article class="post-list-small__entry clearfix">
+                  <div class="post-list-small__img-holder">
+                    <div class="thumb-container thumb-75">
+                      <a href="single-post.html">
+                        <img data-src="./static/img/blog/review_post_2.jpg" src="img/empty.png" alt="" class=" lazyload">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="post-list-small__body">
+                    <h3 class="post-list-small__entry-title">
+                      <a href="single-post.html">最好的儿童笔记本电脑</a>
+                    </h3>
+                    <ul class="entry__meta">
+                      <li class="entry__meta-rating">
+                        <i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star-outline"></i>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </li>
+              <li class="post-list-small__item">
+                <article class="post-list-small__entry clearfix">
+                  <div class="post-list-small__img-holder">
+                    <div class="thumb-container thumb-75">
+                      <a href="single-post.html">
+                        <img data-src="./static/img/blog/review_post_3.jpg" src="img/empty.png" alt="" class=" lazyload">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="post-list-small__body">
+                    <h3 class="post-list-small__entry-title">
+                      <a href="single-post.html">PS4游戏手柄预购周五在纽约开始</a>
+                    </h3>
+                    <ul class="entry__meta">
+                      <li class="entry__meta-rating">
+                        <i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star-outline"></i>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </li>
+              <li class="post-list-small__item">
+                <article class="post-list-small__entry clearfix">
+                  <div class="post-list-small__img-holder">
+                    <div class="thumb-container thumb-75">
+                      <a href="single-post.html">
+                        <img data-src="./static/img/blog/review_post_4.jpg" src="img/empty.png" alt="" class=" lazyload">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="post-list-small__body">
+                    <h3 class="post-list-small__entry-title">
+                      <a href="single-post.html">实践：鹦鹉AR无人机2.0回顾</a>
+                    </h3>
+                    <ul class="entry__meta">
+                      <li class="entry__meta-rating">
+                        <i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star"></i><!--
+                        --><i class="ui-star-outline"></i>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Widget Tags -->
+          <div class="widget widget_tag_cloud">
+            <h4 class="widget-title">标签</h4>
+            <div class="tagcloud">
+              <a href="#">红色精神</a>
+              <a href="#">国际风云</a>
+              <a href="#">国内实时</a>
+              <a href="#">科技强国</a>
+              <a href="#">军政</a>
+              <a href="#">依法治国</a>
+              <a href="#">红军精神</a>
+              <a href="#">抗日</a>
+            </div>
+          </div>
+
+        </aside> <!-- end sidebar -->
+
+      </div> <!-- end content -->
+    </div> <!-- end main container -->
+
+          <!-- Widget Tags -->
+          <div class="widget widget_tag_cloud">
+            <h4 class="widget-title">Tags</h4>
+            <div class="tagcloud">
+              <a href="#">Magazine</a>
+              <a href="#">Creative</a>
+              <a href="#">Responsive</a>
+              <a href="#">Modern</a>
+              <a href="#">Tech</a>
+              <a href="#">WordPress</a>
+              <a href="#">Website</a>
+              <a href="#">News</a>
+            </div>
+          </div>
+
+        </aside> <!-- end sidebar -->
+
+      </div> <!-- end content -->
+    </div> <!-- end main container -->
+
+    <!-- Footer -->
+    <footer class="footer footer--dark">
+      <div class="container">
+        <div class="footer__widgets">
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6">
+              <div class="widget">
+                <a href="index.html">
+                  <img src="img/logo_mobile.png" srcset="img/logo_mobile.png 1x, img/logo_mobile@2x.png 2x" class="logo__img" alt="">
+                </a>
+                <p class="mt-20">We bring you the best Premium WordPress Themes. Deliver smart websites faster with this amazing theme. We care about our buyers.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <h4 class="widget-title">Latest Posts</h4>
+              <ul class="post-list-small">
+                <li class="post-list-small__item">
+                  <article class="post-list-small__entry clearfix">
+                    <div class="post-list-small__img-holder">
+                      <div class="thumb-container thumb-75">
+                        <a href="single-post.html">
+                          <img data-src="img/blog/popular_post_1.jpg" src="img/empty.png" alt="" class="lazyload">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="post-list-small__body">
+                      <h3 class="post-list-small__entry-title">
+                        <a href="single-post.html">Google is fixing its troubling burger emoji in Android 8.1</a>
+                      </h3>
+                      <ul class="entry__meta">
+                        <li class="entry__meta-date">
+                          <i class="ui-date"></i>
+                          21 October, 2017
+                        </li>
+                      </ul>
+                    </div>
+                  </article>
+                </li>
+                <li class="post-list-small__item">
+                  <article class="post-list-small__entry clearfix">
+                    <div class="post-list-small__img-holder">
+                      <div class="thumb-container thumb-75">
+                        <a href="single-post.html">
+                          <img data-src="img/blog/popular_post_2.jpg" src="img/empty.png" alt="" class="lazyload">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="post-list-small__body">
+                      <h3 class="post-list-small__entry-title">
+                        <a href="single-post.html">How Meditation Can Transform Your Business</a>
+                      </h3>
+                      <ul class="entry__meta">
+                        <li class="entry__meta-date">
+                          <i class="ui-date"></i>
+                          21 October, 2017
+                        </li>
+                      </ul>
+                    </div>
+                  </article>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="widget widget__newsletter">
+                <h4 class="widget-title">Follow us</h4>
+
+                <div class="socials mb-20">
+                  <a href="#" class="social social-facebook" aria-label="facebook"><i class="ui-facebook"></i></a>
+                  <a href="#" class="social social-twitter" aria-label="twitter"><i class="ui-twitter"></i></a>
+                  <a href="#" class="social social-google-plus" aria-label="google+"><i class="ui-google"></i></a>
+                  <a href="#" class="social social-youtube" aria-label="youtube"><i class="ui-youtube"></i></a>
+                  <a href="#" class="social social-instagram" aria-label="instagram"><i class="ui-instagram"></i></a>
+                </div>
+
+                <form class="mc4wp-form" method="post">
+                  <div class="mc4wp-form-fields">
+                    <p>
+                      <input type="email" name="EMAIL" placeholder="Your email" required="">
+                    </p>
+                    <p>
+                      <input type="submit" class="btn btn-lg btn-color" value="Subscribe">
+                    </p>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="widget widget_nav_menu">
+                <h4 class="widget-title">Useful Links</h4>
+                <ul>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Categories</a></li>
+                  <li><a href="#">Shortcodes</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div> <!-- end container -->
+
+      <div class="footer__bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 order-lg-2 text-right text-md-center">
+              <div class="widget widget_nav_menu">
+                <ul>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">Advertise</a></li>
+                  <li><a href="#">Affiliates</a></li>
+                  <li><a href="#">Newsletter</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-5 order-lg-1 text-md-center">
+              <span class="copyright">
+                Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div> <!-- end bottom footer -->
+    </footer> <!-- end footer -->
+
+    <div id="back-to-top">
+      <a href="#top" aria-label="Go to top"><i class="ui-arrow-up"></i></a>
+    </div>
+
+  </main> <!-- end main-wrapper -->
+
+
+  <!-- jQuery Scripts -->
+  <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/easing.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/owl-carousel.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/twitterFetcher_min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/jquery.newsTicker.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/modernizr.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/scripts.js') }}"></script>
+
+</body>
+</html>
